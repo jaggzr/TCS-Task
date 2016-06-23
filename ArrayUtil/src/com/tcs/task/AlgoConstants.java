@@ -1,4 +1,4 @@
-package com.tcs.task.data;
+package com.tcs.task;
 
 /**
  * @author Jagadeesan

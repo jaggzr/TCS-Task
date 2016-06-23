@@ -1,10 +1,19 @@
-package com.tcs.task.data.util;
+/*
+ * 
+ * Project ArrayUtil demonstrates various methods
+ * using which duplicate entries can be removed from 
+ * an array of java.lang.Integer. 
+ * 
+ */
+package com.tcs.task.util;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import com.tcs.task.AlgoConstants;
 
 /**
  * @author Jagadeesan
@@ -23,6 +32,32 @@ public class CheckDuplicate {
 	}
 	
 	/**
+	 * Method which removes duplicates from arg java.lang.Integer array.
+	 * method delegates call to corresponding utility method based on
+	 * enum argument passed.
+	 * 
+	 * @param arrayToCleanse
+	 * 		  Array to be duplicate checked.
+	 * @param algo
+	 * 		  Algorithm to be used to remove duplicates.
+	 * @return Integer[]
+	 * 		   An Integer array without duplicates
+	 */
+	public Integer[] findAndRemoveDuplicates(Integer[] arrayToCleanse, AlgoConstants algo){
+		
+	      switch (algo) {
+          case ALGO_LIST:
+              return removeDuplicates(arrayToCleanse);
+          case ALGO_SET:
+              return removeDuplicatesKeepOrder(arrayToCleanse);
+          case ALGO_NO_HASH:
+              return removeDuplicatesNoHash(arrayToCleanse);
+          default:
+              throw new AssertionError("Unknown operations " + this);
+      }
+	}	
+	
+	/**
 	 * Method removes duplicates using a java.util.Set implementation.
 	 * Load factor 0.75 is assumed to ensure size safety and avoid
 	 * frequent re-hashing. 
@@ -35,7 +70,7 @@ public class CheckDuplicate {
 	 * @return Integer[]
 	 * 		   An array without duplicates.
 	 */
-	public static Integer[] removeDuplicates(Integer[] array){
+	private Integer[] removeDuplicates(Integer[] array){
 		
 		if(array != null && array.length > 0) {
 			final Float load_factor = 0.75F;
@@ -63,7 +98,7 @@ public class CheckDuplicate {
 	 * @return Integer[]
 	 * 		   An array without duplicates.
 	 */	
-	public static Integer[] removeDuplicatesKeepOrder(Integer[] array) {
+	private Integer[] removeDuplicatesKeepOrder(Integer[] array) {
 		
 		if(array != null && array.length > 0) {
 			// assuming 1/3rd of an array could be duplicates,
@@ -95,7 +130,7 @@ public class CheckDuplicate {
 	 * @return Integer[]
 	 * 		   An array without duplicates.
 	 */		
-	public static Integer[] removeDuplicatesNoHash(Integer[] array){
+	private Integer[] removeDuplicatesNoHash(Integer[] array){
 
         if (array != null && array.length > 0) {
 			Arrays.sort(array);
