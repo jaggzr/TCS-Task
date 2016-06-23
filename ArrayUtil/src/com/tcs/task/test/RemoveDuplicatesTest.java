@@ -45,8 +45,7 @@ public class RemoveDuplicatesTest {
 	 */
 	@Test
 	public void testRemoveDuplicates() {
-		CheckDuplicate checkDuplicate = new CheckDuplicate();
-		Integer[] sortedArray = checkDuplicate.findAndRemoveDuplicates(getRandomIntegers(), AlgoConstants.ALGO_LIST);
+		Integer[] sortedArray = CheckDuplicate.getInstance().findAndRemoveDuplicates(getRandomIntegers(), AlgoConstants.ALGO_LIST);
 		Arrays.sort(sortedArray);
 		int size = sortedArray.length;
 		int i, j;
@@ -58,4 +57,16 @@ public class RemoveDuplicatesTest {
 			}
 		}
 	}
+	
+	 /**
+     * This method tests if RuntimeException occurs when null value is passed 
+     * instead of integer array.
+     * 
+     */
+	@SuppressWarnings("unused")
+    @Test(expected = RuntimeException.class)
+	    public void throwsRuntimeExceptionWhenNull() {
+	        Integer[] sortedArray = CheckDuplicate.getInstance().findAndRemoveDuplicates(null,
+	                AlgoConstants.ALGO_NO_HASH);
+	    }
 }
