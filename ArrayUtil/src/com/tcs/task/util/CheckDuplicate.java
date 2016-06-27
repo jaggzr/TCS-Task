@@ -2,7 +2,7 @@
  * 
  * Project ArrayUtil demonstrates various methods
  * using which duplicate entries can be removed from 
- * an array of java.lang.Integer. 
+ * an array of integers. 
  * 
  */
 package com.tcs.task.util;
@@ -20,7 +20,7 @@ import com.tcs.task.AlgoConstants;
  * @author Jagadeesan
  * 
  *         Class <code>CheckDuplicate</code> declares utility methods to remove
- *         duplicates from java.lang.Integer array.
+ *         duplicates from an array of integers.
  *
  */
 public class CheckDuplicate {
@@ -52,7 +52,7 @@ public class CheckDuplicate {
     }
 
     /**
-     * Method which removes duplicates from arg java.lang.Integer array. method
+     * Method which removes duplicates from arg integer array. method
      * delegates call to corresponding utility method based on enum argument
      * passed.
      * 
@@ -60,7 +60,7 @@ public class CheckDuplicate {
      *            Array to be duplicate checked.
      * @param algo
      *            Algorithm to be used to remove duplicates.
-     * @return int[] An Integer array without duplicates
+     * @return int[] An integer array without duplicates
      */
     public int[] findAndRemoveDuplicates(int[] arrayToCleanse, AlgoConstants algo) {
 

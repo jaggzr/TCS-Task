@@ -14,13 +14,13 @@ import com.tcs.task.util.CheckDuplicate;
  * 
  * Class <code>RemoveDuplicatesTest</code> provides Junit test case
  * to check if removeDuplicates method removes duplicates 
- * from java.lang.Integer array.
+ * from integer array.
  *
  */
 public class RemoveDuplicatesTest {
 
 	/**
-	 * randomIntegers is an Integer array initialized with random
+	 * randomIntegers is an integer array initialized with random
 	 *  numbers from which duplicates will be removed.
 	 *
 	 */

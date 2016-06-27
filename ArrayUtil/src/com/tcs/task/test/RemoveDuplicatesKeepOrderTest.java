@@ -14,13 +14,13 @@ import com.tcs.task.util.CheckDuplicate;
  * 
  *         Class <code>RemoveDuplicatesKeepOrderTest</code> provides Junit test
  *         case to check if removeDuplicatesKeepOrder method removes duplicates
- *         from java.lang.Integer array.
+ *         from integer array.
  *
  */
 public class RemoveDuplicatesKeepOrderTest {
 
     /**
-     * randomIntegers is an Integer array initialized with random numbers from
+     * randomIntegers is an integer array initialized with random numbers from
      * which duplicates will be removed.
      *
      */
